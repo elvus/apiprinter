@@ -1,2 +1,2 @@
-# apiprinter
+# Api Printer
 Api printer for JasperReports
