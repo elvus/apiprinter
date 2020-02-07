@@ -31,7 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+libs/
 
 ### Project ###
 src/main/java/com/printer/apiprinter/conexion/conexion.java
+src/main/resources/BrushScriptMT-1.0.jar
 config.properties

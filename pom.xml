@@ -138,9 +138,8 @@
 			<artifactId>sample</artifactId>
 			<version>1.0</version>
 			<scope>system</scope>
-			<systemPath>${project.basedir}/src/main/resources/BrushScriptMT-1.0.jar</systemPath>
+			<systemPath>${project.basedir}/libs/BrushScriptMT-1.0.jar</systemPath>
 		</dependency>
-
 	</dependencies>
 
 	<build>
