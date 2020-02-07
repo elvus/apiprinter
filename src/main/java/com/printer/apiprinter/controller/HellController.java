@@ -24,9 +24,9 @@ public class HellController {
     }
 
     @PostMapping("printer")
-    String printReport(@RequestBody Map<String, Object> map) { // json with the connection, report ubication and params
-                                                               // and local printer
+    int printReport(@RequestBody Map<String, Object> map) { // json with the connection, report ubication and params
+                                                            // and local printer
         SetReport(map);
-        return "ok";
+        return 200;
     }
 }

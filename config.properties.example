@@ -4,3 +4,4 @@ database=db
 user=user
 pass=pass
 reportFolder=reports
+imageFolder=img

@@ -133,6 +133,13 @@
 			<version>5.1.23</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.sample</groupId>
+			<artifactId>sample</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/resources/BrushScriptMT-1.0.jar</systemPath>
+		</dependency>
 
 	</dependencies>
 

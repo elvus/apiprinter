@@ -86,9 +86,11 @@ public class printers {
             Connection con = conexion.getConnection(String.format("jdbc:mysql://%s:%s/%s", prop.getProperty("url"),
                     prop.getProperty("port"), prop.getProperty("database")), prop.getProperty("user"),
                     prop.getProperty("pass"));
-                    
+
             map.put("SUBREPORT_DIR", System.getProperty("user.dir") + File.separator + prop.getProperty("reportFolder")
                     + File.separator + map.get("subreport"));
+            map.put("IMAGE_DIR", System.getProperty("user.dir") + File.separator + prop.getProperty("imageFolder")
+                    + File.separator + map.get("image"));
 
             JasperReport rep = (JasperReport) JRLoader.loadObject(reporte);
             JasperPrint jasperPrint = JasperFillManager.fillReport(rep, map, con);
