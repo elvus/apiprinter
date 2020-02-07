@@ -1,7 +1,7 @@
 HELP.md
 target/
 
-reports/
+reports/*
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
 !**/src/test/**
@@ -33,4 +33,5 @@ build/
 .vscode/
 
 ### Project ###
+src/main/java/com/printer/apiprinter/conexion/conexion.java
 config.properties
