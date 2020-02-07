@@ -3,6 +3,7 @@ package com.printer.apiprinter.models;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import javax.print.PrintService;
 import javax.print.attribute.HashPrintRequestAttributeSet;
@@ -26,6 +27,9 @@ import net.sf.jasperreports.export.SimplePrintServiceExporterConfiguration;
 
 import java.awt.print.PrinterJob;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 
 public class printers {
@@ -70,14 +74,27 @@ public class printers {
     }
 
     public static void SetReport(Map<String, Object> map) {
-        File reporte = new File((String) map.get("report"));
         try {
-            Connection con = conexion.getConnection((String) map.get("db"), (String) map.get("user"),
-                    (String) map.get("pass"));
+            InputStream input = new FileInputStream(
+                    System.getProperty("user.dir") + File.separator + "config.properties");
+            Properties prop = new Properties();
+            prop.load(input);
+
+            File reporte = new File((String) System.getProperty("user.dir") + File.separator
+                    + prop.getProperty("reportFolder") + File.separator + map.get("report"));
+
+            Connection con = conexion.getConnection(String.format("jdbc:mysql://%s:%s/%s", prop.getProperty("url"),
+                    prop.getProperty("port"), prop.getProperty("database")), prop.getProperty("user"),
+                    prop.getProperty("pass"));
+                    
+            map.put("SUBREPORT_DIR", System.getProperty("user.dir") + File.separator + prop.getProperty("reportFolder")
+                    + File.separator + map.get("subreport"));
+
             JasperReport rep = (JasperReport) JRLoader.loadObject(reporte);
             JasperPrint jasperPrint = JasperFillManager.fillReport(rep, map, con);
             PrintReportToPrinter(jasperPrint, (String) map.get("printer"));
-        } catch (JRException ex) {
+
+        } catch (IOException | JRException ex) {
             ex.printStackTrace();
         }
     }

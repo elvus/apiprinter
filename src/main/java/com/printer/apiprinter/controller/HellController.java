@@ -20,11 +20,12 @@ import java.util.Map;
 public class HellController {
     @GetMapping("printer")
     List<String> hell() {
-        return getPrinterServiceNameList(); //get the local printers. 
+        return getPrinterServiceNameList(); // get the local printers.
     }
 
     @PostMapping("printer")
-    String printReport(@RequestBody Map<String, Object> map) { //json with the connection, report ubication and params and local printer
+    String printReport(@RequestBody Map<String, Object> map) { // json with the connection, report ubication and params
+                                                               // and local printer
         SetReport(map);
         return "ok";
     }

@@ -1,0 +1,6 @@
+url=localhost
+port=xxxx
+database=db
+user=user
+pass=pass
+reportFolder=reports
