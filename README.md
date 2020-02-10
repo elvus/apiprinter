@@ -2,7 +2,9 @@
 A simple api to send jasperreports to the printer
 ## How to Use
 Rename the config.properties.expample to config.properties.
+
 Rename the conexion.java.example to conexion.java and make your connection.
+
 Edit the file and specify the parameters
 ```
 url=localhost //Your database url
