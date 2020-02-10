@@ -25,10 +25,10 @@ $.ajax({
   contentType: "application/json; charset=utf-8",
   dataType: "json",
   data:JSON.stringify({
-    id_usuario: 1, 
     subreport: "subreportname.jasper", 
-    report:"reportort.jasper",
-	  printer:"printername"
+    report: "reportort.jasper",
+    printer: "printername"
+    another: "Another Report Parameter"
   }),
   success:function(data){
     data
