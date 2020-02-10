@@ -19,7 +19,7 @@ Run the project
 
 Go to http://localhost:5000/printer to list your local printers
 
-Send a post json like as
+Send a post json like
 ```
 $.ajax({
   url:"http://localhost:5000/printer",
