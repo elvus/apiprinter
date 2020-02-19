@@ -1,7 +1,7 @@
 # Api Printer JasperSoft with Spring Boot
 A simple api to send jasperreports to the printer
 ## How to Use
-Rename the config.properties.expample to config.properties.
+Rename the config.properties.example to config.properties.
 
 Rename the conexion.java.example to conexion.java and make your connection.
 
@@ -12,8 +12,8 @@ port=3306 //Your database port
 database=db //database name
 user=root
 pass=admin
-reportFolder=reports //The reports Folder
-imageFolder=reports //Report Images folder
+reportFolder=reports //The reports Folder (default reports)
+imageFolder=reports //Report Images folder (default img)
 ```
 Run the project
 
