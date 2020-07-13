@@ -1,5 +1,5 @@
 # Api Printer JasperSoft with Spring Boot
-A simple api to send jasperreports to the printer
+A simple api to send jasperreports to printer
 ## How to Use
 Rename the config.properties.example to config.properties.
 
